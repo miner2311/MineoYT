@@ -5,15 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function fetchLatestVideo() {
   const apiKey = 'AIzaSyAVTr5Sibixz-qxktu0PM1N4NeZ2iAFjY0'; 
-  const uploadsPlaylistId = 'UU18P6ul4qthaJpWw8Un7SJw'; // 'Uploads' 재생 목록 ID
-  const url = `https://www.googleapis.com/youtube/v3/playlistItems?key=${apiKey}&playlistId=${uploadsPlaylistId}&part=snippet,id&order=date&maxResults=3`;
+  const channelId = 'UC18P6ul4qthaJpWw8Un7SJw'; 
+  const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=3&type=video`;
 
   fetch(url)
       .then(response => response.json())
       .then(data => {
-          if (data.items.length > 0) {
-              data.items.forEach(item => {
-                  const videoId = item.snippet.resourceId.videoId;
+          const videoItems = data.items.filter(item => item.id.kind === 'youtube#video');
+          if (videoItems.length > 0) {
+              videoItems.forEach(item => {
+                  const videoId = item.id.videoId;
                   displayLatestVideo(videoId);
               });
           } else {
