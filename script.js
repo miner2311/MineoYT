@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   fetchLatestVideo();
 });
-
 function fetchLatestVideo() {
   const apiKey = 'AIzaSyAVTr5Sibixz-qxktu0PM1N4NeZ2iAFjY0'; 
   const channelId = 'UC18P6ul4qthaJpWw8Un7SJw'; 
