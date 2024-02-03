@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   function fetchLatestVideo() {
-    const apiKey = 'AIzaSyAVTr5Sibixz-qxktu0PM1N4NeZ2iAFjY0'; 
+    const apiKey = 'AIzaSyBP7Vj64WW_t-RLrqda1pMb4xoz1YY4Zmk'; 
     const channelId = 'UC18P6ul4qthaJpWw8Un7SJw'; 
     const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=3&type=video`;
   
