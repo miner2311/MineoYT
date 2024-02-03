@@ -6,11 +6,15 @@
     <title>민어-게임유튜버 홍보 페이지</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 웹사이트의 내용 -->
+</body>
+</html>
     <header>
         <div class="logo-container">
-          <img src="https://yt3.ggpht.com/2pccp3646UsSX6Yk0XG6u8bhXb2p8Qm8_2hcsoahzwjiH3H3lhjf5Cp7kiujdtdtHZ6d0mfI=s600-c-k-c0x00ffffff-no-rj-rp-mo" alt="로고" class="logo">
+          <img src="https://yt3.ggpht.com/zKBngXeJeG24u6YRxIAw6wx9OS2LccXJQTigh02imDOHgCbElWr_a_W5Cbu1uVt_spN1F2z9tQ=s88-c-k-c0x00ffffff-no-rj" alt="로고" class="logo">
         </div>
 
         <h1 class="center-text">민어-게임유튜버</h1>
@@ -24,7 +28,29 @@
 
     <div id="latest-video-container"></div>
     
-    <!-- 나머지 콘텐츠 -->
+    <div class="contact-form">
+        <h2>문의하기</h2>
+        <form onsubmit="sendEmail(); return false;">
+            <label for="name">이름:</label><br>
+            <input type="text" id="name" required><br>
+            <label for="email">이메일:</label><br>
+            <input type="email" id="email" required><br>
+            <label for="message">메시지:</label><br>
+            <textarea id="message" required></textarea><br>
+            <input type="submit" value="문의하기">
+        </form>
+    </div>
+
+    <script>
+    function sendEmail() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+        var body = '이름: ' + name + '%0D%0A' + '이메일: ' + email + '%0D%0A' + '메시지: ' + message;
+    
+        window.location.href = 'mailto:mineomunyee@gmail.com?subject=문의&body=' + body;
+    }
+    </script>
     
 </body>
 </html>
