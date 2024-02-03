@@ -10,7 +10,7 @@ function fetchLatestVideo() {
   fetch(url)
       .then(response => response.json())
       .then(data => {
-          const videoItems = data.items.filter(item => item.id.kind === 'youtube#video');
+          console.log(response);  // API 응답을 콘솔에 출력
           if (videoItems.length > 0) {
               videoItems.forEach(item => {
                   const videoId = item.id.videoId;
